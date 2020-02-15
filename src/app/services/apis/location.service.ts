@@ -8,18 +8,20 @@ import { map } from 'rxjs/operators';
 import { UtilityService } from 'src/app/services/static/utility.service';
 
 // Models
-import { darkSky } from 'src/app/models/weather.model';
+import { locationView } from 'src/app/models/location.model';
 
 @Injectable()
-export class weatherService {
+export class locationService {
     constructor(
         private http: HttpClient
     ) { }
 
-    GetWeatherByCoordinates(latitude: number, longitude: number): Observable<darkSky> {
-        const url = 'https://api.darksky.net/forecast/37a66de95c083bf850d6c997a34191aa/' + latitude + ',' + longitude;
-        return this.http.get<darkSky>(url).pipe(
+    getCoordinatesByZip(zipCode: number): Observable<locationView> {
+        const url = 'https://www.zipcodeapi.com/rest/dTOqa2Hsg7pPyYdlVfexivWireVmI0WrFzCw9WLNBVGLPEqQktJI0vGILabagKC7/info.json/' + zipCode + '/degrees';
+        return this.http.get<locationView>(url).pipe(
             map(UtilityService.extractData)
         );
     }
+
+
 }
