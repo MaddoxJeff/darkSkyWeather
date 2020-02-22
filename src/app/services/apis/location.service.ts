@@ -17,7 +17,7 @@ export class locationService {
     ) { }
 
     getCoordinatesByZip(zipCode: number): Observable<locationView> {
-        const url = 'https://www.zipcodeapi.com/rest/dTOqa2Hsg7pPyYdlVfexivWireVmI0WrFzCw9WLNBVGLPEqQktJI0vGILabagKC7/info.json/' + zipCode + '/degrees';
+        const url = 'https://www.zipcodeapi.com/rest/js-8f8VadZdBlWEP9AV5xqPFPjJxLyXrHLogQWN7A1V0gqeemM2XiOkl8WkAC1YMK26/info.json/' + zipCode + '/degrees';
         return this.http.get<locationView>(url).pipe(
             map(UtilityService.extractData)
         );

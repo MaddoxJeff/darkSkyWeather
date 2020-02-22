@@ -3,16 +3,18 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {platformBrowserDynamic} from '@angular/platform-browser-dynamic';
+import {BrowserModule} from '@angular/platform-browser';
 
 // Pipes
 import { SafeHtml } from './services/pipes/safe-html.pipe';
 
 // Third Party Imports
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {CdkTableModule} from '@angular/cdk/table';
 
 //import { AngularFontAwesomeModule} from '../../node_modules/angular-font-awesome';
-import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormField, MatInputModule, MatSliderModule, MatBadgeModule, MatButtonModule, MatTooltipModule, MatDialogModule, MatMenuModule, MatListModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatExpansionModule} from '@angular/material';
+import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormField, MatInputModule, MatSliderModule, MatBadgeModule, MatButtonModule, MatTooltipModule, MatDialogModule, MatMenuModule, MatListModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatExpansionModule, MatAutocompleteModule,MatButtonToggleModule, MatCheckboxModule,MatChipsModule,} from '@angular/material';
 
 @NgModule({
     declarations: [
@@ -40,6 +42,12 @@ import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormF
         MatDatepickerModule,
         MatNativeDateModule,
         MatExpansionModule,
+        MatAutocompleteModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        MatChipsModule,
+        CdkTableModule,
+        ReactiveFormsModule,
         //AngularFontAwesomeModule,
 
  
@@ -71,6 +79,11 @@ import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormF
         MatDatepickerModule,
         MatNativeDateModule,
         MatExpansionModule,
+        MatAutocompleteModule,
+        MatButtonToggleModule,
+        MatCheckboxModule,
+        MatChipsModule,
+        ReactiveFormsModule,
         //AngularFontAwesomeModule,
 
     

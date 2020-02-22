@@ -17,7 +17,8 @@ export class weatherService {
     ) { }
 
     GetWeatherByCoordinates(latitude: number, longitude: number): Observable<darkSky> {
-        const url = 'https://api.darksky.net/forecast/37a66de95c083bf850d6c997a34191aa/' + latitude + ',' + longitude;
+        const url = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/37a66de95c083bf850d6c997a34191aa/' + latitude + ',' + longitude;
+        //const url = 'https://cors-anywhere.herokuapp.com/https://api.darksky.net/forecast/37a66de95c083bf850d6c997a34191aa/29.750262,-95.615197';
         return this.http.get<darkSky>(url).pipe(
             map(UtilityService.extractData)
         );

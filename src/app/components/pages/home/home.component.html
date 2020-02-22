@@ -1,20 +1,17 @@
-<div class="parent">
-    <div class="example-container">
-        <mat-form-field appearance="fill">
-          <mat-label>Input</mat-label>
-          <input matInput>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-          <mat-label>Select</mat-label>
-          <mat-select>
-            <mat-option value="option">Option</mat-option>
-          </mat-select>
-        </mat-form-field>
-        <br>
-        <mat-form-field appearance="fill">
-          <mat-label>Textarea</mat-label>
-          <textarea matInput></textarea>
-        </mat-form-field>
-      </div>
-</div>
+
+<mat-card id="card" style="text-align: center;">
+	<mat-card-title>
+		Enter Zipcode
+	</mat-card-title>
+
+	<mat-card-content>
+
+		<mat-form-field>
+			<input matInput placeholder="zipcode"
+			[ngModel]="zipCode" (ngModelChange)="zipCode = $event;">
+		</mat-form-field><br/>
+		<button (click)="onZipEnter()" mat-raised-button color="primary" style="margin-right:5px;">Go</button>
+
+	</mat-card-content>
+
+
