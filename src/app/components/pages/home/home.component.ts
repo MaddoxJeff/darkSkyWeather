@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   longtiude: number;
   public locationView: locationView;
   public DarkSky: darkSky;
+  
 
 
   public subscriptions = new Subscription();
@@ -49,18 +50,12 @@ export class HomeComponent implements OnInit {
         this.locationView = locationView;
         this.latitude = this.locationView.lat;
         this.longtiude = this.locationView.lng;
-        console.log(this.latitude);
-        
+        this.WeatherService.GetWeatherByCoordinates(this.latitude, this.longtiude).subscribe((DarkSky: darkSky) => {
+          this.DarkSky = DarkSky;
+        })
       })
     )
-    
 
-
-    this.subscriptions.add(
-      this.WeatherService.GetWeatherByCoordinates(this.latitude, this.longtiude).subscribe((DarkSky: darkSky) => {
-        this.DarkSky = DarkSky;
-      })
-    )
   }
 
   
