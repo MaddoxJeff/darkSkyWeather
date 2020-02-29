@@ -17,41 +17,10 @@
 
 
 
-<!--
-<div class="column-layout">
-	<div class="main-column">
-		<h2>Main Column</h2>
-		<p>This is some grade a bullshit that I'm dealing with right now.</p>
-	</div>
-	<div class="sidebar-one">
-		<h3>Sidebar One</h3>
-		<p>This is text inside sidebar one.</p>
-	</div>
-	<div class="sidebar-two">
-		<h3>Sidebar Two</h3>
-		<p>This is text for sidebar two</p>
-	</div>
 
-</div>
--->
+
 
 <!--
-<div class="call-outs-container">
-	<div class="call-out">
-		<h4>Feature 1</h4>
-		<p>Death weeks early had their and folly timed put. Hearted forbade on an village ye in fifteen. Age attended betrayed her man raptures laughter. Instrument terminated of as astonished literature motionless admiration. The affection are determine how performed intention discourse but. On merits on so valley indeed assure of. Has add particular boisterous uncommonly are. Early wrong as so manor match. Him necessary shameless discovery consulted one but. </p>
-	</div>
-	<div class="call-out">
-		<h4>Feature 2</h4>
-		<p>In alteration insipidity impression by travelling reasonable up motionless. Of regard warmth by unable sudden garden ladies. No kept hung am size spot no. Likewise led and dissuade rejoiced welcomed husbands boy. Do listening on he suspected resembled. Water would still if to. Position boy required law moderate was may. </p>
-	</div>
-	<div class="call-out">
-		<h4>Feature 3</h4>
-		<p>Old education him departure any arranging one prevailed. Their end whole might began her. Behaved the comfort another fifteen eat. Partiality had his themselves ask pianoforte increasing discovered. So mr delay at since place whole above miles. He to observe conduct at detract because. Way ham unwilling not breakfast furniture explained perpetual. Or mr surrounded conviction so astonished literature. Songs to an blush woman be sorry young. We certain as removal attempt. </p>
-	</div>
-
-</div>
--->
 <div class="parent-weather-container">
 	<div class="current-weather-container">
 		<div class="current-weather">
@@ -88,49 +57,63 @@
 	</div>
 </div>
 
+
 <div class="daily-weather-container">
-	<div class="daily-weather">
-		
-
-	</div>
-
-
-</div>
-
-
-
-<!--
-<div class="current-weather-container">
-	<div class="current-weather">
-		<h2>Houston, TX</h2>
-	</div>
-	<div class="current-weather">
-		<h2>58</h2>
-	</div>
-	<div class="current-weather">
-		<h2>Sunny</h2>
-	</div>
-</div>
-<div class="current-wind-container">
-	<div class="current-wind">
-		<h4>Feels Like 58</h4>
-	</div>
-	<div class="current-wind">
-		<h4>Wind 11 mph</h4>
-	</div>
-	<div class="current-wind">
-		<h4>Visibility 11 mi</h4>
-	</div>
-</div>
-<div class="current-wind-container">
-	<div class="current-wind">
-		<h4>Barometer 30.19</h4>
-	</div>
-	<div class="current-wind">
-		<h4>Humidity 49%</h4>
-	</div>
-	<div class="current-wind">
-		<h4>Dew Point 38%</h4>
+	<div *ngFor="let day of DarkSky.daily.data">
+		<div class="daily-weather">
+			<h4>{{day.time}}</h4>
+			<h4>{{day.temperatureHigh}}</h4><h5>{{day.temperatureLow}}</h5>
+			<h4>{{day.icon}}</h4>
+		</div>
 	</div>
 </div>
 -->
+
+<div class="container">
+	<div class="parent-weather-container">
+		<div class="current-weather-container">
+			<div class="current-weather">
+				<h2>Houston, TX</h2>
+			</div>
+			<div class="current-weather">
+				<h1>{{DarkSky.currently.temperature}}</h1>
+			</div>
+			<div class="current-weather">
+				<h2>{{DarkSky.currently.icon}}</h2>
+			</div>
+		</div>
+		<div class="current-wind-container">
+			<div class="current-wind">
+				<h4>Feels Like {{DarkSky.currently.apparentTemperature}}</h4>
+			</div>
+			<div class="current-wind">
+				<h4>Wind {{DarkSky.currently.windSpeed}}</h4>
+			</div>
+			<div class="current-wind">
+				<h4>Visibility {{DarkSky.currently.visibility}}</h4>
+			</div>
+		</div>
+		<div class="current-wind-container">
+			<div class="current-wind">
+				<h4>Barometer {{DarkSky.currently.pressure}}</h4>
+			</div>
+			<div class="current-wind">
+				<h4>Humidity {{DarkSky.currently.humidity}}</h4>
+			</div>
+			<div class="current-wind">
+				<h4>Dew Point {{DarkSky.currently.dewPoint}}</h4>
+			</div>
+		</div>
+	</div>
+	
+	
+	<div class="daily-weather-container">
+		<div *ngFor="let day of DarkSky.daily.data">
+			<div class="daily-weather">
+				<h4>{{day.time}}</h4>
+				<h4>{{day.temperatureHigh}}</h4><h5>{{day.temperatureLow}}</h5>
+				<h4>{{day.icon}}</h4>
+			</div>
+		</div>
+	</div>
+</div>

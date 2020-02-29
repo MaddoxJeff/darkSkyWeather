@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ModuleWithComponentFactories } from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 import { locationView } from 'src/app/models/location.model';
 import { Subscription } from 'rxjs';
@@ -7,6 +7,7 @@ import { locationService } from 'src/app/services/apis/location.service';
 import { weatherService } from 'src/app/services/apis/weather.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { Time } from '@angular/common';
+import * as moment from 'moment';
 
 
 @Component({
@@ -42,6 +43,11 @@ export class HomeComponent implements OnInit {
          this.DarkSky = DarkSky;
        })
     )
+  }
+
+  epochToDate(date: number) {
+    moment.unix(date).toString();
+    
   }
 
 

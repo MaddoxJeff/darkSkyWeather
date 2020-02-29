@@ -56,12 +56,32 @@
 .call-out:nth-child(2) {background-color: #cdf1c3;}
 .call-out:nth-child(3) {background-color: #ccb9da;}
 
+
+.container {
+    //background-position: center;
+    //background-repeat: no-repeat;
+    position:fixed;
+    padding:0;
+    margin:0;
+
+    top:0;
+    left:0;
+
+    width: 100%;
+    height: 100%;
+
+    background: url(.../../../../../../assets/images/NightSky.jpg);
+    background-size: cover;
+    background-position: center center;
+}
+
 .parent-weather-container {
     margin-top: 50px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 
 }
 
@@ -79,9 +99,13 @@
     h1{
         font-size: 70px;
         margin: 0px;
+        color: white;
+        text-shadow: 4px 4px 6px black;
     }
     h2{
         margin: 0px;
+        color: white;
+        text-shadow: 4px 4px 6px black;
     }
 
     //padding: 10px;
@@ -99,6 +123,8 @@
 .current-wind {
     padding: 10px;
     h4{
+        color: white;
+        text-shadow: 4px 4px 6px black;
         margin: 0px;
 
     }
@@ -106,14 +132,29 @@
 }
 
 .daily-weather-container {
+    margin-top: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
 
 
 }
 
 .daily-weather {
-
-
+    padding: 60px;
+    h4 {
+        color: white;
+        text-shadow: 4px 4px 6px black;
+    }
+    h5 {
+        color: white;
+        text-shadow: 4px 4px 6px black;
+    }
+    //box-sizing: border-box;
+    //flex-basis: 60%;
 
 }
+
 
 
