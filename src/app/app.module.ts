@@ -19,11 +19,13 @@ import { AboutComponent } from './components/pages/about/about.component';
 import { weatherService } from './services/apis/weather.service';
 import { locationService } from './services/apis/location.service';
 import { locationView } from './models/location.model';
+import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    AboutComponent
+    AboutComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,

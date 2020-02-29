@@ -5,7 +5,7 @@ export class darkSky {
     currently: weatherCurrently;
     minutely: weatherMinutely;
     hourly: weatherHourly;
-    daily: weatherDataDaily;
+    daily: weatherDaily;
     flags: weatherFlags;
     offset: number;
 }
