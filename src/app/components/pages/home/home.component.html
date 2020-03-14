@@ -76,7 +76,7 @@
 				<h2>Houston, TX</h2>
 			</div>
 			<div class="current-weather">
-				<h1>{{DarkSky.currently.temperature}}</h1>
+				<h1>{{DarkSky.currently.temperature}}°</h1>
 			</div>
 			<div class="current-weather">
 				<h2>{{DarkSky.currently.icon}}</h2>
@@ -106,14 +106,18 @@
 		</div>
 	</div>
 	
-	
-	<div class="daily-weather-container">
-		<div *ngFor="let day of DarkSky.daily.data">
-			<div class="daily-weather">
-				<h4>{{day.time}}</h4>
-				<h4>{{day.temperatureHigh}}</h4><h5>{{day.temperatureLow}}</h5>
-				<h4>{{day.icon}}</h4>
+	<div class="parent-daily-container" >
+		<div class="daily-weather-container" >
+			<div *ngFor="let day of DarkSky.daily.data">
+				<div class="daily-weather">
+					<h4>{{day.time * 1000 | date: 'EEE d' }}</h4>
+					<div class="daily-high-low">
+						<h4>{{day.temperatureHigh}}° </h4><h5> {{day.temperatureLow}}°</h5>
+					</div>					
+					<h4>{{day.icon}}</h4>
+				</div>
 			</div>
 		</div>
 	</div>
+
 </div>

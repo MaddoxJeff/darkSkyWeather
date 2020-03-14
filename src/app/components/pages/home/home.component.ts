@@ -23,6 +23,7 @@ export class HomeComponent implements OnInit {
   zipCode: number;
   latitude: number;
   longtiude: number;
+  tinySpace: string = ' ';
   public locationView: locationView;
   public DarkSky: darkSky;
   //public day1: weatherDataDaily;
