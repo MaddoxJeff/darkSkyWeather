@@ -1,12 +1,14 @@
 // Angular Imports
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { MatDialogRef } from '@angular/material';
 
 // Components
 import { HomeComponent} from '../home/home.component';
 
 // Modules
 import { SharedModule } from '../../../shared.module';
+
 
 const routes: Routes = [
     { path: '', component: HomeComponent }
@@ -15,6 +17,7 @@ const routes: Routes = [
 @NgModule({
     declarations: [
         HomeComponent,
+
 
     ],
     imports: [

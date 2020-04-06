@@ -20,17 +20,36 @@ import { weatherService } from './services/apis/weather.service';
 import { locationService } from './services/apis/location.service';
 import { locationView } from './models/location.model';
 import { DashboardComponent } from './components/pages/dashboard/dashboard.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { MatToolbarModule, MatDialogModule, MatInputModule, MatFormFieldModule } from '@angular/material';
+import { DialogNavComponent } from './dialog-nav/dialog-nav.component';
+import { ZipcodeDialogueComponent } from './components/modals/zipcode-dialogue/zipcode-dialogue.component';
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     AboutComponent,
-    DashboardComponent
+    DashboardComponent,
+    NavbarComponent,
+    DialogNavComponent,
+    ZipcodeDialogueComponent,
+
+
+    
   ],
+  entryComponents: [
+    DialogNavComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
     SharedModule,
+    MatToolbarModule,
+    MatDialogModule,
+    MatInputModule,
+    MatFormFieldModule,
     RouterModule.forRoot(AppRoutes)
   ],
   providers: [

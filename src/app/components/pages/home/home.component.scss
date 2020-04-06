@@ -64,7 +64,10 @@
     padding:0;
     margin:0;
 
-    top:0;
+    @media only screen and (max-width: 600px){
+        top:56.3px;
+    }
+    top:64.3px;
     left:0;
 
     width: 100%;

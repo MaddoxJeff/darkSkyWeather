@@ -1,0 +1,31 @@
+<!--
+<h2 mat-dialog-title>Enter zipcode</h2>
+
+<form class="example-form">
+    <mat-form-field class="example-full-width">
+        <mat-label>Zipcode</mat-label>
+
+        <input #zipCode matInput >
+          <button mat-button mat-dialog-close (click)="updateZipcode(zipCode.value)" >Update</button>
+    </mat-form-field>
+</form>
+-->
+
+
+<div class="container">
+    <div class="container-header">Update Zipcode</div>
+    <div class="container-content">
+
+        <form #ModalForm="ngForm">
+            <mat-form-field class="example-full-width">
+                <!--
+                <input matInput [ngModel]="newZipcode" (ngModelChange)="newZipcode = $event;" type="number">
+                -->
+                <input #zipCode matInput >
+            </mat-form-field>
+        </form>
+        
+        <button (click)="Save(zipCode.value)" mat-button>Enter</button>
+
+    </div>
+</div>

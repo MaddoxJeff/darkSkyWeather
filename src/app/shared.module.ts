@@ -14,7 +14,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {CdkTableModule} from '@angular/cdk/table';
 
 //import { AngularFontAwesomeModule} from '../../node_modules/angular-font-awesome';
-import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormField, MatInputModule, MatSliderModule, MatBadgeModule, MatButtonModule, MatTooltipModule, MatDialogModule, MatMenuModule, MatListModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatExpansionModule, MatAutocompleteModule,MatButtonToggleModule, MatCheckboxModule,MatChipsModule,} from '@angular/material';
+import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormField, MatInputModule, MatSliderModule, MatBadgeModule, MatButtonModule, MatTooltipModule, MatDialogModule, MatMenuModule, MatListModule, MatToolbarModule, MatSidenavModule, MatIconModule, MatCardModule, MatDatepickerModule, MatNativeDateModule, MatExpansionModule, MatAutocompleteModule,MatButtonToggleModule, MatCheckboxModule,MatChipsModule, MatDialogRef} from '@angular/material';
+
 
 @NgModule({
     declarations: [
@@ -48,6 +49,7 @@ import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormF
         MatChipsModule,
         CdkTableModule,
         ReactiveFormsModule,
+
         //AngularFontAwesomeModule,
 
  
@@ -84,6 +86,7 @@ import {MatTabsModule, MatRadioModule, MatSelectModule, MatTableModule, MatFormF
         MatCheckboxModule,
         MatChipsModule,
         ReactiveFormsModule,
+
         //AngularFontAwesomeModule,
 
     

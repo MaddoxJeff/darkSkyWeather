@@ -1,0 +1,14 @@
+<div class="container">
+    <div class="container-header">Update Zipcode</div>
+    <div class="container-content">
+
+        <form #ModalForm="ngForm">
+            <mat-form-field class="example-full-width">
+                <input matInput [ngModel]="newZipcode" (ngModelChange)="newZipcode = $event;" type="number">
+            </mat-form-field>
+        </form>
+        
+        <button (click)="Save()" mat-button>Enter</button>
+
+    </div>
+</div>
