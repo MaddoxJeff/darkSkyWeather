@@ -72,50 +72,52 @@
 <app-dialog-nav [ZIPCODE]="zipCode"></app-dialog-nav>
 
 <app-dialog-nav #child (zipcodeChange)="onDoTheThing($event)" ></app-dialog-nav>-->
-<div class="container">
+<div class="container"  style="background-color: black;">
 	<div class="parent-weather-container">
 		<div class="current-weather-container">
 			<div class="current-weather">
-				<button (click)="updateZipCode()" mat-button>Update</button>
-				<h2>Houston, TX</h2>
 				<!--
-				<h2>{{locationView?.city, locationView?.state}}</h2>
+				<button (click)="updateZipCode()" mat-button>Update</button>
+				
+				<h2>Houston, TX</h2>
 				-->
+				<h2>{{locationView?.city}}, {{locationView?.state}}</h2>
+				
 			</div>
 			<div class="current-weather">
-				<h1>{{DarkSky.currently.temperature}}°</h1>
+				<h1>{{DarkSky?.currently.temperature}}°</h1>
 			</div>
 			<div class="current-weather">
-				<h2>{{DarkSky.currently.icon}}</h2>
+				<h2>{{DarkSky?.currently.icon}}</h2>
 			</div>
 		</div>
 		<div class="current-wind-container">
 			<div class="current-wind">
-				<h4>Feels Like {{DarkSky.currently.apparentTemperature}}</h4>
+				<h4>Feels Like {{DarkSky?.currently.apparentTemperature}}</h4>
 			</div>
 			<div class="current-wind">
-				<h4>Wind {{DarkSky.currently.windSpeed}}</h4>
+				<h4>Wind {{DarkSky?.currently.windSpeed}}</h4>
 			</div>
 			<div class="current-wind">
-				<h4>Visibility {{DarkSky.currently.visibility}}</h4>
+				<h4>Visibility {{DarkSky?.currently.visibility}}</h4>
 			</div>
 		</div>
 		<div class="current-wind-container">
 			<div class="current-wind">
-				<h4>Barometer {{DarkSky.currently.pressure}}</h4>
+				<h4>Barometer {{DarkSky?.currently.pressure}}</h4>
 			</div>
 			<div class="current-wind">
-				<h4>Humidity {{DarkSky.currently.humidity}}</h4>
+				<h4>Humidity {{DarkSky?.currently.humidity}}</h4>
 			</div>
 			<div class="current-wind">
-				<h4>Dew Point {{DarkSky.currently.dewPoint}}</h4>
+				<h4>Dew Point {{DarkSky?.currently.dewPoint}}</h4>
 			</div>
 		</div>
 	</div>
 	
 	<div class="parent-daily-container" >
 		<div class="daily-weather-container" >
-			<div *ngFor="let day of DarkSky.daily.data">
+			<div *ngFor="let day of DarkSky?.daily.data">
 				<div class="daily-weather">
 					<h4>{{day.time * 1000 | date: 'EEE d' }}</h4>
 					<div class="daily-high-low">

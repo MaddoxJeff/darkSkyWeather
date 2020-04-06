@@ -9,7 +9,7 @@ import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog
 import { Time } from '@angular/common';
 import * as moment from 'moment';
 import { DialogNavComponent } from 'src/app/dialog-nav/dialog-nav.component';
-import { ZipcodeDialogueComponent } from 'src/app/components/modals/zipcode-dialogue/zipcode-dialogue.component';
+//import { ZipcodeDialogueComponent } from 'src/app/components/modals/zipcode-dialogue/zipcode-dialogue.component';
 import { zip, delay } from 'rxjs/operators';
 
 
@@ -25,6 +25,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   //@ViewChild(DialogNavComponent, {static: true}) child: DialogNavComponent;
 
+  modalClosed: boolean = false;
   zipCode: number;
   latitude: number;
   longtiude: number;
@@ -46,11 +47,11 @@ export class HomeComponent implements OnInit, OnDestroy {
 
 
   ngOnInit() {
-    this.subscriptions.add(
-      this.WeatherService.GetWeatherByCoordinates(29.7604, -95.3698).subscribe((DarkSky: darkSky) => {
-         this.DarkSky = DarkSky;
-       })
-    )
+
+
+
+
+    this.updateZipCode();
 
 
   }
@@ -63,80 +64,29 @@ export class HomeComponent implements OnInit, OnDestroy {
     const modal = this.dialog.open(DialogNavComponent, {
       width: '400px',
       data: {
-        modalTitle: 'Update Zipcode'
+        modalTitle: 'Enter Zipcode'
       }
       
     });
 
-
-
     const UpdateZip = modal.afterClosed().subscribe(async payload => {
       let newZipcode: number = payload;
 
-      const res1 = await this.LocationService.getCoordinatesByZip(payload).toPromise();
+      const location = await this.LocationService.getCoordinatesByZip(payload).toPromise();
 
 
-      
-      //const res2 = await this.WeatherService.GetWeatherByCoordinates(res1.lat, res1.lng).toPromise();
-
-
-      //this.subscriptions.add(
-       //   forkJoin([this.LocationService.getCoordinatesByZip(payload), this.WeatherService.GetWeatherByCoordinates(res1.lat, res1.lng)]).subscribe(results => {
-       //   this.locationView = results[0];
-       //   this.DarkSky = results[1];
-       // })       
-      //)
-
-
-
-     //while(this.locationView.lat == null){
-       // await delay(200);
-     //}
-
-     
-
-     //if(this.locationView.lat == null){
-       //await observable.first().toPromise();
-
-     //}
-
-
-     
-     
 
       this.subscriptions.add(
-         this.WeatherService.GetWeatherByCoordinates(res1.lat, res1.lng).subscribe((DarkSky: darkSky) => {
+         this.WeatherService.GetWeatherByCoordinates(location.lat, location.lng).subscribe((DarkSky: darkSky) => {
           this.DarkSky = DarkSky;
+          this.locationView = location;
         })
       )
 
-
-
     })
+    this.modalClosed = true;
   }
 
 
-
-
-
-
-
-  //onZipcodeChange(event: number) {
-  //  console.log('New zipcode: ' + event);
-  //}
-
-  //onDoTheThing() {
-  //  this.child.zipcode;
-  //  console.log(this.child.zipcode);
-  //}
-
-  //epochToDate(date: number) {
-  //  moment.unix(date).toString();
-    
-  //}
-
-
-
-  
 
 }
