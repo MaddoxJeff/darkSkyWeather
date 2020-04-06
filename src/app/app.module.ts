@@ -24,6 +24,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MatToolbarModule, MatDialogModule, MatInputModule, MatFormFieldModule } from '@angular/material';
 import { DialogNavComponent } from './dialog-nav/dialog-nav.component';
 import { ZipcodeDialogueComponent } from './components/modals/zipcode-dialogue/zipcode-dialogue.component';
+import { LoginComponent } from '../app/components/pages/login/login.component';
 
 
 
@@ -36,6 +37,7 @@ import { ZipcodeDialogueComponent } from './components/modals/zipcode-dialogue/z
     NavbarComponent,
     DialogNavComponent,
     ZipcodeDialogueComponent,
+    LoginComponent,
 
 
     

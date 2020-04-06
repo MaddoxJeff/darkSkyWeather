@@ -4,13 +4,14 @@ import { HomeComponent } from '../app/components/pages/home/home.component';
 import { AboutComponent } from '../app/components/pages/about/about.component';
 import { DashboardComponent } from '../app/components/pages/dashboard/dashboard.component';
 import { NavbarComponent } from '../app/navbar/navbar.component';
+import { LoginComponent } from '../app/components/pages/login/login.component';
 
 
 const routes: Routes = [
-  { path: 'home', component: HomeComponent},
+  { path: '', component: HomeComponent},
   { path: 'about', component: AboutComponent },
   { path: 'dashboard', component: DashboardComponent },
-  //{ path: '', component: NavbarComponent },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({
